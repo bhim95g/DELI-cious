@@ -11,23 +11,28 @@ public class Order {
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
     }
-    public void addDrinks(Drinks drinks) {
-        drinks.add(drinks);
+    public void addDrink(Drinks drink1) {
+        drinks.add(drink1);
     }
-    public void addChips(Chips chips) {
-        chips.add(chips);
+    public void addChips(Chips chips1) {
+        chips.add(chips1);
     }
+    //Calculate the total price of the order
     public double calculateTotal() {
         double total = 0.0;
-        for (Sandwich sandwich : sandwiches)
+
+        //adding up price of the sandwich
+        for (Sandwich sandwich : sandwiches) {
             total += sandwich.calculatePriceOfSandwich();
-
-        for (Drinks drinks1 : drinks)
+        }
+        //adding price of the drinks
+        for (Drinks drinks1 : drinks) {
             total += drinks1.getPrice();
-
-        for (Chips chips1 : chips)
+        }
+        //adding prices of the chips
+        for (Chips chips1 : chips) {
             total += chips1.getPrice();
-
+        }
         return total;
 
     }
