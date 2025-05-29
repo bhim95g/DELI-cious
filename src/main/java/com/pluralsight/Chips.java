@@ -2,15 +2,15 @@ package com.pluralsight;
 
 public class Chips {
     private String flavor;
-    private double price;
+    private double price = 1.50;
 
     //Constructor
-    public Chips(String flavor, double price) {
+    public Chips(String flavor) {
         this.flavor = flavor;
-        this.price= price;
-    }
-    //Getters and Setters
 
+    }
+
+    //Getters and Setters
     public String getFlavor() {
         return flavor;
     }
@@ -29,9 +29,6 @@ public class Chips {
 
     @Override
     public String toString() {
-        return "Chips{" +
-                "flavor='" + flavor + '\'' +
-                ", price=" + price +
-                '}';
+        return flavor + " chips ($" + String.format("%.2f", price) + ")";
     }
 }

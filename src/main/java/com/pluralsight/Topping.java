@@ -1,29 +1,43 @@
 package com.pluralsight;
 
-import java.util.*;
 
 public class Topping {
-    private String name;
+    private String name;        // Name of the topping (e.g., "ham")
+    private boolean isPremium;  // True if premium (meats, cheeses), false if regular
+    private int quantity;       // How many servings
 
-    private int quantity;
-    private boolean isPremium;
-
-    // Constructor
-    public Topping(String name, int quantity, boolean isPremium) {
+    public Topping(String name, boolean isPremium, int quantity) {
         this.name = name;
-        this.quantity = quantity;
         this.isPremium = isPremium;
+        this.quantity = quantity;
     }
 
     // Getters and setters
-    public String getName() { return name; }
-    public int getQuantity() { return quantity; }
-    public boolean isPremium() { return isPremium; }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public boolean isPremium() {
+        return isPremium;
+    }
+    public void setPremium(boolean premium) {
+        isPremium = premium;
+    }
 
+    public int getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    // Optional: override toString for display
     @Override
     public String toString() {
-        return name + " x" + quantity + (isPremium ? " (Premium)" : "");
+        return name + (quantity > 1 ? " x" + quantity : "");
     }
 }
+
